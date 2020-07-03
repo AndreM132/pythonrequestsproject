@@ -1,0 +1,39 @@
+{% block body_content %}
+
+<h3>Home Page</h3>
+<p style="width:50px;height:50px;background-color:#ffcc00;">Animals and Noises</p>
+<div class="form">
+        <form method="POST" action="">
+                {{ form.hidden_tag() }}
+                <div class="form-group">
+                        {{ form.the_animal.label }}
+                        {{ form.the_animal }}
+                        {% if form.the_animal.errors %}
+                        <div class="error">
+                                {% for error in form.the_animal.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}
+                        </div>
+                        {% endif %}
+                </div>
+                <br>
+		<div class="form-group">
+                        {{ form.the_noise.label }}
+                        {{ form.the_noise }}
+                        {% if form.the_noise.errors %}
+                        <div class="error">
+                                {% for error in form.the_noise.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}
+                        </div>
+                        {% endif %}
+                </div>
+                <br>
+		 <div class="form-group">
+                    {{ form.submit }}
+                </div>
+	</form>
+	<br></br>
+</div>
+
+{% endblock %}
